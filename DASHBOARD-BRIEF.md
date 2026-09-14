@@ -89,4 +89,19 @@ Append one entry per session, in order, using this exact format:
 - Next up: <the next item on the plan>
 ```
 
-No entries yet — this log starts filling in from Session 1 onward.
+**Session 1 — 2026-09-14**
+- Built: Set up dev environment (installed Node.js via nvm and the GitHub
+  CLI, since neither existed on this machine), scaffolded the React +
+  Vite project, built a minimal dashboard shell (sidebar nav with
+  Overview/Pipeline/Team Performance sections, header, placeholder
+  content area), added a tiny synthetic demo-data stub, wrote the README
+  and `.gitignore` (with real-data exclusions), created this brief file,
+  and pushed the repo to GitHub.
+- Files touched: `src/App.jsx`, `src/App.css`, `src/index.css`,
+  `src/components/layout/Sidebar.jsx`, `src/components/layout/Sidebar.css`,
+  `src/components/layout/Header.jsx`, `src/components/layout/Header.css`,
+  `src/data/demoData.js`, `README.md`, `.gitignore`, `DASHBOARD-BRIEF.md`,
+  `index.html`
+- Commit: `feat: scaffold dashboard shell with layout and nav` (38f9d52)
+- Next up: data model (define the shape of members/pipeline entries and
+  wire the demo data stub into it)
