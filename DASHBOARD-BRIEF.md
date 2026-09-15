@@ -105,3 +105,17 @@ Append one entry per session, in order, using this exact format:
 - Commit: `feat: scaffold dashboard shell with layout and nav` (38f9d52)
 - Next up: data model (define the shape of members/pipeline entries and
   wire the demo data stub into it)
+
+**Session 2 — 2026-09-15**
+- Built: Defined the data model — clear `Member` (`id`, `name`) and
+  `PipelineEntry` (`id`, `label`, `memberId`, `stage`, `updatedAt`) shapes,
+  plus small selector helpers (`getStageCounts`, `getMemberEntryCounts`,
+  `getEntriesForMember`, `getEntriesForStage`, `getMemberById`). Wired the
+  demo data into all three sections (Overview, Pipeline, Team Performance)
+  as plain data-driven lists/counts, replacing the static placeholder
+  text — proves the model end-to-end without building the KPI cards or
+  pipeline visual yet (those stay scoped to their own sessions).
+- Files touched: `src/data/demoData.js`, `src/App.jsx`, `src/App.css`
+- Commit: `feat: define pipeline/member data model and wire it into the
+  shell` (2e0ea81)
+- Next up: KPI cards for the Overview section
