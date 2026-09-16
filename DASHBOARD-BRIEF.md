@@ -119,3 +119,19 @@ Append one entry per session, in order, using this exact format:
 - Commit: `feat: define pipeline/member data model and wire it into the
   shell` (2e0ea81)
 - Next up: KPI cards for the Overview section
+
+**Session 3 — 2026-09-16**
+- Built: Added KPI cards to the Overview page — Team Members, Leads,
+  Contacted, Applications, Approvals, Realizations, and overall
+  Conversion Rate. Added two selectors to the data model to support
+  this: `getFunnelCounts` (cumulative counts — how many entries have
+  reached each stage or beyond, assuming entries only move forward) and
+  `getConversionRate` (realized entries ÷ total leads). Built a new
+  `KpiCards` component (colocated `.jsx`/`.css`, matching the existing
+  layout component pattern) and replaced the Overview section's plain
+  stage-count list with it.
+- Files touched: `src/data/demoData.js`, `src/App.jsx`,
+  `src/components/kpi/KpiCards.jsx`, `src/components/kpi/KpiCards.css`
+- Commit: `feat: add Overview KPI cards wired to the data model`
+  (5d7986f)
+- Next up: pipeline stage visual (Week 1's last item)
