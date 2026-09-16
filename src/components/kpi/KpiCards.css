@@ -1,0 +1,26 @@
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.kpi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.kpi-card-label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.kpi-card-value {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-h);
+}

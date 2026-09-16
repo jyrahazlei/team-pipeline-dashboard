@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Sidebar from './components/layout/Sidebar.jsx'
 import Header from './components/layout/Header.jsx'
+import KpiCards from './components/kpi/KpiCards.jsx'
 import {
   demoMembers,
   demoEntries,
@@ -10,25 +11,7 @@ import {
 import './App.css'
 
 function OverviewSection() {
-  const stageCounts = getStageCounts(demoEntries)
-
-  return (
-    <div className="data-panel">
-      <p className="data-panel-summary">
-        {demoEntries.length} pipeline entries across {demoMembers.length} team
-        members. KPI cards and a visual pipeline breakdown will replace this
-        summary in an upcoming session.
-      </p>
-      <ul className="data-list">
-        {stageCounts.map(({ stage, count }) => (
-          <li key={stage}>
-            <span>{stage}</span>
-            <span>{count}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+  return <KpiCards members={demoMembers} entries={demoEntries} />
 }
 
 function PipelineSection() {

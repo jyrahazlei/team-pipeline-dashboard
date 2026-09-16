@@ -58,3 +58,23 @@ export function getMemberEntryCounts(members, entries) {
     count: getEntriesForMember(entries, member.id).length,
   }))
 }
+
+// Returns [{ stage, count }] as cumulative funnel counts: how many entries
+// have reached each stage or beyond. Assumes entries only move forward
+// through PIPELINE_STAGES (never backward), so an entry currently at
+// "Applied" also counts toward "Leads" and "Contacted".
+export function getFunnelCounts(entries) {
+  return PIPELINE_STAGES.map((stage, stageIndex) => ({
+    stage,
+    count: entries.filter((entry) => PIPELINE_STAGES.indexOf(entry.stage) >= stageIndex).length,
+  }))
+}
+
+// Overall conversion rate: realized entries as a fraction of total leads
+// (every entry starts as a lead, so entries.length is the lead count).
+// Returns a number between 0 and 1.
+export function getConversionRate(entries) {
+  if (entries.length === 0) return 0
+  const realizedCount = entries.filter((entry) => entry.stage === 'Realized').length
+  return realizedCount / entries.length
+}
